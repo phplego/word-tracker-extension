@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "default_locale": "en",
+  "name": "__MSG_extensionName__",
+  "version": "1.0.2",
+  "description": "__MSG_extensionDescription__",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting",
+    "contextMenus"
+  ],
+  "host_permissions": [
+    "https://openrouter.ai/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["utils/markdown.js", "content.js"],
+      "css": ["styles/content.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["images/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

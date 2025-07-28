@@ -1,0 +1,150 @@
+{
+  "extensionName": {
+    "message": "Word Tracker",
+    "description": "The name of the extension"
+  },
+  "extensionDescription": {
+    "message": "A tool that helps explain and remember unfamiliar words while browsing.",
+    "description": "The description of the extension"
+  },
+  "tabHistory": {
+    "message": "History",
+    "description": "History tab name"
+  },
+  "tabSettings": {
+    "message": "Settings",
+    "description": "Settings tab name"
+  },
+  "exportLink": {
+    "message": "export",
+    "description": "Export link text"
+  },
+  "manageHistoryButton": {
+    "message": "Manage History",
+    "description": "Manage history button text"
+  },
+  "settingsDescription": {
+    "message": "Manage your word tracking preferences.",
+    "description": "Settings description"
+  },
+  "enableWordTracker": {
+    "message": "Enable Word Tracker",
+    "description": "Enable Word Tracker checkbox label"
+  },
+  "openrouterApiKey": {
+    "message": "OpenRouter API Key:",
+    "description": "OpenRouter API Key label"
+  },
+  "aiModel": {
+    "message": "AI Model:",
+    "description": "AI Model label"
+  },
+  "fetchModels": {
+    "message": "Fetch Models",
+    "description": "Fetch Models button text"
+  },
+  "promptLabel": {
+    "message": "Prompt:",
+    "description": "Prompt label"
+  },
+  "statusChanged": {
+    "message": "changed",
+    "description": "Status message when settings are changed"
+  },
+  "statusSaved": {
+    "message": "✓ saved",
+    "description": "Status message when settings are saved"
+  },
+  "statusFetchingModels": {
+    "message": "Fetching models...",
+    "description": "Status message when fetching models"
+  },
+  "statusModelsUpdated": {
+    "message": "✓ Models updated",
+    "description": "Status message when models are updated"
+  },
+  "noHistoryEntries": {
+    "message": "No history entries yet. Use the \"Explain\" context menu on selected text to add entries.",
+    "description": "Message shown when there are no history entries"
+  },
+  "deleteConfirmation": {
+    "message": "Are you sure you want to delete this entry?",
+    "description": "Confirmation message for deleting an entry"
+  },
+  "contextMenuExplain": {
+    "message": "Explain",
+    "description": "Context menu item for explaining selected text"
+  },
+  "apiKeyNotSet": {
+    "message": "Error: OpenRouter API key not set. Please set it in the extension settings.",
+    "description": "Error message when API key is not set"
+  },
+  "loadingExplanation": {
+    "message": "Loading explanation...",
+    "description": "Message shown while loading an explanation"
+  },
+  "noExplanationAvailable": {
+    "message": "No explanation available",
+    "description": "Message shown when no explanation is available"
+  },
+  "errorPrefix": {
+    "message": "Error: ",
+    "description": "Prefix for error messages"
+  },
+  "manageHistoryTitle": {
+    "message": "Word Tracker - Manage History",
+    "description": "Title for the manage history page"
+  },
+  "manageHistoryHeader": {
+    "message": "Word Tracker - Manage History",
+    "description": "Header for the manage history page"
+  },
+  "loadingHistory": {
+    "message": "Loading history...",
+    "description": "Message shown while loading history"
+  },
+  "buttonEdit": {
+    "message": "Edit",
+    "description": "Edit button text"
+  },
+  "buttonDelete": {
+    "message": "Delete",
+    "description": "Delete button text"
+  },
+  "buttonReexplain": {
+    "message": "Re-explain",
+    "description": "Re-explain button text"
+  },
+  "buttonSave": {
+    "message": "Save",
+    "description": "Save button text"
+  },
+  "buttonCancel": {
+    "message": "Cancel",
+    "description": "Cancel button text"
+  },
+  "buttonSubmit": {
+    "message": "Submit",
+    "description": "Submit button text"
+  },
+  "buttonSaveToHistory": {
+    "message": "Save to History",
+    "description": "Save to History button text"
+  },
+  "labelWord": {
+    "message": "Word:",
+    "description": "Word label text"
+  },
+  "labelSentence": {
+    "message": "Sentence:",
+    "description": "Sentence label text"
+  },
+  "labelExplanation": {
+    "message": "Explanation:",
+    "description": "Explanation label text"
+  },
+  "labelPromptTemplate": {
+    "message": "Prompt template for re-explanation:",
+    "description": "Prompt template label text"
+  }
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenRouter API Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #333;
+        }
+        #results {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            white-space: pre-wrap;
+        }
+        .success {
+            color: green;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>OpenRouter API Test</h1>
+    <p>Click one of the buttons below to run a test:</p>
+
+    <button id="testCompletionBtn">Test Completion API</button>
+    <button id="testModelsBtn">Test Get Models API</button>
+
+    <div id="results">Results will appear here...</div>
+
+    <!-- Include the OpenRouter client library -->
+    <script src="openrouter.js"></script>
+
+    <!-- Include the test script -->
+    <script src="test-openrouter.js"></script>
+
+    <!-- Script for handling tests -->
+    <script>
+        // Override console.log to also display in the results div
+        const originalConsoleLog = console.log;
+        const originalConsoleError = console.error;
+        const resultsDiv = document.getElementById('results');
+
+        console.log = function(...args) {
+            originalConsoleLog.apply(console, args);
+            resultsDiv.innerHTML += args.map(arg => 
+                typeof arg === 'object' ? JSON.stringify(arg, null, 2) : arg
+            ).join(' ') + '<br>';
+        };
+
+        console.error = function(...args) {
+            originalConsoleError.apply(console, args);
+            resultsDiv.innerHTML += '<span class="error">' + 
+                args.map(arg => typeof arg === 'object' ? JSON.stringify(arg, null, 2) : arg).join(' ') + 
+                '</span><br>';
+        };
+
+        // Function to clear results and run a test
+        function runTest(testFunction) {
+            // Clear the results div
+            resultsDiv.innerHTML = '';
+
+            // Run the test
+            testFunction()
+                .then(result => {
+                    console.log(`<span class="success">${result}</span>`);
+                })
+                .catch(error => {
+                    console.error(`Test execution error: ${error.message}`);
+                });
+        }
+
+        // Set up button event listeners
+        window.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('testCompletionBtn').addEventListener('click', () => {
+                runTest(testOpenRouterClient);
+            });
+
+            document.getElementById('testModelsBtn').addEventListener('click', () => {
+                runTest(testGetModels);
+            });
+        });
+    </script>
+</body>
+</html>

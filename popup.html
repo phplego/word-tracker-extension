@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>__MSG_extensionName__</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      width: 500px;
+      margin: 0;
+      padding: 10px 16px 10px 16px;
+    }
+    .logo {
+      font-size: 22px;
+      color: #333;
+      font-weight: normal;
+    }
+
+    .icon{
+        vertical-align: middle;
+    }
+    
+    .action-bar {
+      display: flex;
+      justify-content: flex-end;
+    }
+    
+    .btn {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    .btn-manage {
+      background-color: #6700B6;
+      color: white;
+    }
+
+    /* Tab styles */
+    .tabs {
+      display: flex;
+      margin-top: 15px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .tab-button {
+      padding: 8px 16px;
+      background-color: #f1f1f1;
+      border: 1px solid #ccc;
+      border-bottom: none;
+      cursor: pointer;
+      margin-right: 5px;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+
+    .tab-button.active {
+      background-color: white;
+      border-bottom: 1px solid white;
+      margin-bottom: -1px;
+    }
+
+    .tab-content {
+      display: none;
+      padding-top: 10px;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .mt-10 {margin-top: 10px;}
+    .p-5 {padding: 5px; margin-bottom: 5px;}
+
+    #prompt, #openrouter-api-key {
+      width: 100%;
+    }
+
+    /* History styles */
+    .history-list {
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    .history-entry {
+      border: 1px solid #eee;
+      border-radius: 4px;
+      margin-bottom: 8px;
+      padding: 5px;
+      background-color: #fafafa;
+    }
+
+    .history-entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .history-first-line {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .history-explanation {
+      margin-top: 8px;
+      font-size: 13px;
+      line-height: 1.4;
+      display: none;
+    }
+
+    .history-sentence {
+      font-size: 13px;
+      font-style: italic;
+      color: #555;
+      margin-top: 8px;
+      line-height: 1.4;
+      display: none;
+    }
+
+    .expanded .history-explanation, .expanded .history-sentence {
+        display: block;
+    }
+
+    .delete-entry {
+      color: #888;
+      border: none;
+      border-radius: 4px;
+      width: 20px;
+      height: 20px;
+      font-size: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .delete-entry:hover {
+      color: white;
+      background-color: #6700B6;
+    }
+    
+    /* Styles for recommended models in dropdown */
+    option.recommended-model {
+      font-weight: bold;
+    }
+
+    .reset-prompt {
+      font-size: 12px;
+      color: #6700B6;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo">
+    <img src="images/icon48.png" alt="Extension Icon" class="icon">
+    Word<b>Tracker</b>
+  </div>
+
+  <!-- Tab Navigation -->
+  <div class="tabs">
+    <button class="tab-button active" data-tab="history">__MSG_tabHistory__</button>
+    <button class="tab-button" data-tab="settings">__MSG_tabSettings__</button>
+  </div>
+
+  <!-- History Tab Content -->
+  <div id="history" class="tab-content active">
+    <div class="history-list" id="history-list">
+      <!-- History entries will be dynamically inserted here -->
+    </div>
+    <div class="action-bar">
+      <button id="manage-history" class="btn btn-manage">__MSG_manageHistoryButton__</button>
+    </div>
+
+  </div>
+
+  <!-- Settings Tab Content -->
+  <div id="settings" class="tab-content">
+    <div id="settings-container">
+      <div>
+        <input type="checkbox" id="isEnabled">
+        <label for="isEnabled">__MSG_enableWordTracker__</label>
+      </div>
+      <div class="mt-10">
+        <label for="openrouter-api-key">__MSG_openrouterApiKey__</label><br>
+        <input type="password" id="openrouter-api-key" class="p-5">
+      </div>
+      <div class="mt-10">
+        <label for="model-selector">__MSG_aiModel__</label><br>
+        <div style="display: flex; align-items: center;">
+          <select id="model-selector" style="flex-grow: 1; margin-right: 5px; width: 100px;">
+            <!-- Options will be dynamically populated here -->
+          </select>
+          <button id="fetch-models-btn">__MSG_fetchModels__</button>
+        </div>
+      </div>
+      <div class="mt-10">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <label for="prompt">__MSG_promptLabel__</label>
+          <div>
+            <a href="#" class="reset-prompt" data-lang="en">en</a>
+            <a href="#" class="reset-prompt" data-lang="ru">ru</a>
+            <a href="#" class="reset-prompt" data-lang="th">th</a>
+          </div>
+        </div>
+        <textarea id="prompt" rows="13" class="p-5"></textarea>
+      </div>
+      <div id="status" class="mt-10"></div>
+    </div>
+  </div>
+
+  <script src="utils/i18n.js"></script>
+  <script src="ai/openrouter/openrouter.js"></script>
+  <script src="services/WordHistoryService.js"></script>
+  <script src="utils/markdown.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+{
+  "extensionName": {
+    "message": "Word Tracker",
+    "description": "The name of the extension"
+  },
+  "extensionDescription": {
+    "message": "เครื่องมือที่ช่วยอธิบายและจดจำคำศัพท์ที่ไม่คุ้นเคยขณะท่องเว็บ",
+    "description": "The description of the extension"
+  },
+  "tabHistory": {
+    "message": "ประวัติ",
+    "description": "History tab name"
+  },
+  "tabSettings": {
+    "message": "การตั้งค่า",
+    "description": "Settings tab name"
+  },
+  "exportLink": {
+    "message": "ส่งออก",
+    "description": "Export link text"
+  },
+  "manageHistoryButton": {
+    "message": "จัดการประวัติ",
+    "description": "Manage history button text"
+  },
+  "settingsDescription": {
+    "message": "จัดการการตั้งค่าการติดตามคำศัพท์ของคุณ",
+    "description": "Settings description"
+  },
+  "enableWordTracker": {
+    "message": "เปิดใช้งาน Word Tracker",
+    "description": "Enable Word Tracker checkbox label"
+  },
+  "openrouterApiKey": {
+    "message": "คีย์ API ของ OpenRouter:",
+    "description": "OpenRouter API Key label"
+  },
+  "aiModel": {
+    "message": "โมเดล AI:",
+    "description": "AI Model label"
+  },
+  "fetchModels": {
+    "message": "ดึงข้อมูลโมเดล",
+    "description": "Fetch Models button text"
+  },
+  "promptLabel": {
+    "message": "คำสั่ง:",
+    "description": "Prompt label"
+  },
+  "statusChanged": {
+    "message": "เปลี่ยนแปลงแล้ว",
+    "description": "Status message when settings are changed"
+  },
+  "statusSaved": {
+    "message": "✓ บันทึกแล้ว",
+    "description": "Status message when settings are saved"
+  },
+  "statusFetchingModels": {
+    "message": "กำลังดึงข้อมูลโมเดล...",
+    "description": "Status message when fetching models"
+  },
+  "statusModelsUpdated": {
+    "message": "✓ อัปเดตโมเดลแล้ว",
+    "description": "Status message when models are updated"
+  },
+  "noHistoryEntries": {
+    "message": "ยังไม่มีรายการในประวัติ ใช้เมนูบริบท \"อธิบาย\" บนข้อความที่เลือกเพื่อเพิ่มรายการ",
+    "description": "Message shown when there are no history entries"
+  },
+  "deleteConfirmation": {
+    "message": "คุณแน่ใจหรือไม่ว่าต้องการลบรายการนี้?",
+    "description": "Confirmation message for deleting an entry"
+  },
+  "contextMenuExplain": {
+    "message": "อธิบาย",
+    "description": "Context menu item for explaining selected text"
+  },
+  "apiKeyNotSet": {
+    "message": "ข้อผิดพลาด: ไม่ได้ตั้งค่าคีย์ API ของ OpenRouter โปรดตั้งค่าในการตั้งค่าส่วนขยาย",
+    "description": "Error message when API key is not set"
+  },
+  "loadingExplanation": {
+    "message": "กำลังโหลดคำอธิบาย...",
+    "description": "Message shown while loading an explanation"
+  },
+  "noExplanationAvailable": {
+    "message": "ไม่มีคำอธิบาย",
+    "description": "Message shown when no explanation is available"
+  },
+  "errorPrefix": {
+    "message": "ข้อผิดพลาด: ",
+    "description": "Prefix for error messages"
+  },
+  "manageHistoryTitle": {
+    "message": "Word Tracker - จัดการประวัติ",
+    "description": "Title for the manage history page"
+  },
+  "manageHistoryHeader": {
+    "message": "Word Tracker - จัดการประวัติ",
+    "description": "Header for the manage history page"
+  },
+  "loadingHistory": {
+    "message": "กำลังโหลดประวัติ...",
+    "description": "Message shown while loading history"
+  },
+  "buttonEdit": {
+    "message": "แก้ไข",
+    "description": "Edit button text"
+  },
+  "buttonDelete": {
+    "message": "ลบ",
+    "description": "Delete button text"
+  },
+  "buttonReexplain": {
+    "message": "อธิบายใหม่",
+    "description": "Re-explain button text"
+  },
+  "buttonSave": {
+    "message": "บันทึก",
+    "description": "Save button text"
+  },
+  "buttonCancel": {
+    "message": "ยกเลิก",
+    "description": "Cancel button text"
+  },
+  "buttonSubmit": {
+    "message": "ส่ง",
+    "description": "Submit button text"
+  },
+  "buttonSaveToHistory": {
+    "message": "บันทึกลงในประวัติ",
+    "description": "Save to History button text"
+  },
+  "labelWord": {
+    "message": "คำศัพท์:",
+    "description": "Word label text"
+  },
+  "labelSentence": {
+    "message": "ประโยค:",
+    "description": "Sentence label text"
+  },
+  "labelExplanation": {
+    "message": "คำอธิบาย:",
+    "description": "Explanation label text"
+  },
+  "labelPromptTemplate": {
+    "message": "เทมเพลตคำสั่งสำหรับการอธิบายใหม่:",
+    "description": "Prompt template label text"
+  }
+}

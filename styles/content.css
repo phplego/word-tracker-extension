@@ -1,0 +1,75 @@
+/* styles/content.css */
+
+#word-tracker-explanation-tooltip {
+  position: absolute;
+  display: none;
+  background-color: #f8f8f8;
+  color: #333;
+  padding: 0;
+  border-radius: 8px;
+  font-size: 14px;
+  z-index: 10000;
+  max-width: 400px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ddd;
+  line-height: 1.5;
+  overflow: hidden;
+}
+
+/* Header styles */
+#word-tracker-explanation-tooltip .tooltip-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ddd;
+  padding: 5px 10px;
+  position: relative;
+}
+
+#word-tracker-explanation-tooltip .tooltip-icon {
+  width: 16px;
+  height: 16px;
+  background-image: url('chrome-extension://__MSG_@@extension_id__/images/icon16.png');
+  margin-right: 4px;
+}
+
+#word-tracker-explanation-tooltip .tooltip-title {
+  font-weight: 500;
+  font-size: 13px;
+  color: #555;
+  flex-grow: 1;
+}
+
+#word-tracker-explanation-tooltip .close-button {
+  cursor: pointer;
+  font-size: 20px;
+  color: #999;
+  line-height: 16px;
+  height: 16px;
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+
+/* Content styles */
+#word-tracker-explanation-tooltip .tooltip-content {
+  padding: 10px 15px;
+}
+
+#word-tracker-explanation-tooltip .tooltip-content::first-line {
+  font-size: 1.2em;
+}
+
+#word-tracker-explanation-tooltip .close-button:hover {
+  color: #333;
+}
+
+#word-tracker-explanation-tooltip .error {
+  color: #d32f2f;
+}
+
+#word-tracker-explanation-tooltip .loading {
+  color: #666;
+  font-style: italic;
+  padding: 10px 20px;
+}

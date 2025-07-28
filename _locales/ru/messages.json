@@ -1,0 +1,150 @@
+{
+  "extensionName": {
+    "message": "Word Tracker",
+    "description": "The name of the extension"
+  },
+  "extensionDescription": {
+    "message": "Инструмент, который помогает объяснять и запоминать незнакомые слова во время просмотра.",
+    "description": "The description of the extension"
+  },
+  "tabHistory": {
+    "message": "История",
+    "description": "History tab name"
+  },
+  "tabSettings": {
+    "message": "Настройки",
+    "description": "Settings tab name"
+  },
+  "exportLink": {
+    "message": "экспорт",
+    "description": "Export link text"
+  },
+  "manageHistoryButton": {
+    "message": "Управление историей",
+    "description": "Manage history button text"
+  },
+  "settingsDescription": {
+    "message": "Управление настройками отслеживания слов.",
+    "description": "Settings description"
+  },
+  "enableWordTracker": {
+    "message": "Включить Word Tracker",
+    "description": "Enable Word Tracker checkbox label"
+  },
+  "openrouterApiKey": {
+    "message": "API ключ OpenRouter:",
+    "description": "OpenRouter API Key label"
+  },
+  "aiModel": {
+    "message": "AI Модель:",
+    "description": "AI Model label"
+  },
+  "fetchModels": {
+    "message": "Обновить модели",
+    "description": "Fetch Models button text"
+  },
+  "promptLabel": {
+    "message": "Промпт:",
+    "description": "Prompt label"
+  },
+  "statusChanged": {
+    "message": "изменено",
+    "description": "Status message when settings are changed"
+  },
+  "statusSaved": {
+    "message": "✓ сохранено",
+    "description": "Status message when settings are saved"
+  },
+  "statusFetchingModels": {
+    "message": "Получение моделей...",
+    "description": "Status message when fetching models"
+  },
+  "statusModelsUpdated": {
+    "message": "✓ Модели обновлены",
+    "description": "Status message when models are updated"
+  },
+  "noHistoryEntries": {
+    "message": "Пока нет записей в истории. Используйте контекстное меню \"Объяснить\" на выделенном тексте, чтобы добавить записи.",
+    "description": "Message shown when there are no history entries"
+  },
+  "deleteConfirmation": {
+    "message": "Вы уверены, что хотите удалить эту запись?",
+    "description": "Confirmation message for deleting an entry"
+  },
+  "contextMenuExplain": {
+    "message": "Объяснить",
+    "description": "Context menu item for explaining selected text"
+  },
+  "apiKeyNotSet": {
+    "message": "Ошибка: API ключ OpenRouter не установлен. Пожалуйста, установите его в настройках расширения.",
+    "description": "Error message when API key is not set"
+  },
+  "loadingExplanation": {
+    "message": "Загрузка объяснения...",
+    "description": "Message shown while loading an explanation"
+  },
+  "noExplanationAvailable": {
+    "message": "Объяснение недоступно",
+    "description": "Message shown when no explanation is available"
+  },
+  "errorPrefix": {
+    "message": "Ошибка: ",
+    "description": "Prefix for error messages"
+  },
+  "manageHistoryTitle": {
+    "message": "Word Tracker - Управление историей",
+    "description": "Title for the manage history page"
+  },
+  "manageHistoryHeader": {
+    "message": "Word Tracker - Управление историей",
+    "description": "Header for the manage history page"
+  },
+  "loadingHistory": {
+    "message": "Загрузка истории...",
+    "description": "Message shown while loading history"
+  },
+  "buttonEdit": {
+    "message": "Редактировать",
+    "description": "Edit button text"
+  },
+  "buttonDelete": {
+    "message": "Удалить",
+    "description": "Delete button text"
+  },
+  "buttonReexplain": {
+    "message": "Переобъяснить",
+    "description": "Re-explain button text"
+  },
+  "buttonSave": {
+    "message": "Сохранить",
+    "description": "Save button text"
+  },
+  "buttonCancel": {
+    "message": "Отмена",
+    "description": "Cancel button text"
+  },
+  "buttonSubmit": {
+    "message": "Отправить",
+    "description": "Submit button text"
+  },
+  "buttonSaveToHistory": {
+    "message": "Сохранить в историю",
+    "description": "Save to History button text"
+  },
+  "labelWord": {
+    "message": "Слово:",
+    "description": "Word label text"
+  },
+  "labelSentence": {
+    "message": "Предложение:",
+    "description": "Sentence label text"
+  },
+  "labelExplanation": {
+    "message": "Объяснение:",
+    "description": "Explanation label text"
+  },
+  "labelPromptTemplate": {
+    "message": "Шаблон промпта для переобъяснения:",
+    "description": "Prompt template label text"
+  }
+}
