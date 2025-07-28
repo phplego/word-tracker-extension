@@ -67,10 +67,14 @@ function getSentenceFromSelection() {
     const selectionText = range.toString();
     const fullText = containerRange.toString();
 
+    const isWhitespace = (char) => {
+        return char === '\n' || char === '\r' || char === '\t' || char === ' ';
+    }
+
     // find the start of the sentence
     let start = selectionIndex;
     while (start > 0) {
-        if (edgeChars.includes(fullText[start - 1]) && fullText[start] === ' ') {
+        if (edgeChars.includes(fullText[start - 1]) && isWhitespace(fullText[start])) {
             break;
         }
         if (selectionIndex - start > 500) break;
@@ -83,7 +87,7 @@ function getSentenceFromSelection() {
         if (edgeChars.includes(fullText[end]) && end === fullText.length) {
             break;
         }
-        if (edgeChars.includes(fullText[end]) && fullText[end + 1] === ' ') {
+        if (edgeChars.includes(fullText[end]) && isWhitespace(fullText[end + 1])) {
             break;
         }
         if (end - selectionIndex > 500) break;
