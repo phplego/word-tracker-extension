@@ -17,6 +17,11 @@
   overflow: hidden;
 }
 
+#word-tracker-explanation-tooltip strong {
+  font-weight: 600;
+  color: inherit;
+}
+
 /* Header styles */
 #word-tracker-explanation-tooltip .tooltip-header {
   display: flex;
