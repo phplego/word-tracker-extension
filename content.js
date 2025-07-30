@@ -173,11 +173,14 @@ document.addEventListener('selectionchange', () => {
             const range = selection.getRangeAt(0);
             const rect = range.getBoundingClientRect();
 
+            // some pages (e.g. docs.zml.ai) use zoom, so we need to adjust the position
+            const zoom = parseFloat(getComputedStyle(document.documentElement).zoom) || 1;
+
             currentSelectionPosition = {
-                left: rect.left + window.scrollX,
-                top: rect.top + window.scrollY,
-                bottom: rect.bottom + window.scrollY,
-                right: rect.right + window.scrollX
+                left: (rect.left + window.scrollX) / zoom,
+                top: (rect.top + window.scrollY) / zoom,
+                bottom: (rect.bottom + window.scrollY) / zoom,
+                right: (rect.right + window.scrollX) / zoom
             };
         }
     }
