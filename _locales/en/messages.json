@@ -4,7 +4,7 @@
     "description": "The name of the extension"
   },
   "extensionDescription": {
-    "message": "A tool that helps explain and remember unfamiliar words while browsing.",
+    "message": "A tool that helps explain and remember unfamiliar words while browsing. Allows you to manage word history and export it to a JSON file.",
     "description": "The description of the extension"
   },
   "tabHistory": {

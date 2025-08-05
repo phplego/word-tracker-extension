@@ -4,7 +4,7 @@
     "description": "The name of the extension"
   },
   "extensionDescription": {
-    "message": "เครื่องมือที่ช่วยอธิบายและจดจำคำศัพท์ที่ไม่คุ้นเคยขณะท่องเว็บ",
+    "message": "เครื่องมือที่ช่วยอธิบายและจดจำคำศัพท์ที่ไม่คุ้นเคยขณะท่องเว็บ ช่วยให้คุณจัดการประวัติคำศัพท์และส่งออกเป็นไฟล์ JSON ได้",
     "description": "The description of the extension"
   },
   "tabHistory": {

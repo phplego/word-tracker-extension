@@ -4,7 +4,7 @@
     "description": "The name of the extension"
   },
   "extensionDescription": {
-    "message": "Инструмент, который помогает объяснять и запоминать незнакомые слова во время просмотра.",
+    "message": "Инструмент, который помогает объяснять и запоминать незнакомые слова во время просмотра. Позволяет управлять историей слов и экспортировать её в JSON файл.",
     "description": "The description of the extension"
   },
   "tabHistory": {
