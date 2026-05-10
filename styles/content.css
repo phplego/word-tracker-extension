@@ -79,3 +79,9 @@
   font-style: italic;
   padding: 10px 20px;
 }
+
+#word-tracker-explanation-tooltip .tooltip-model {
+  margin-top: 8px;
+  font-size: 11px;
+  color: #999;
+}

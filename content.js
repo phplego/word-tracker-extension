@@ -148,6 +148,13 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
             contentDiv.innerHTML += simpleMarkdownToHtml(message.explanation);
             contentContainer.appendChild(contentDiv);
 
+            if (message.model) {
+                const modelElement = document.createElement('div');
+                modelElement.className = 'tooltip-model';
+                modelElement.textContent = `model: ${message.model}`;
+                contentContainer.appendChild(modelElement);
+            }
+
             // Position and show the tooltip
             explanationTooltip.style.display = 'block';
             explanationTooltip.style.left = `${currentSelectionPosition.left}px`;

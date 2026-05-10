@@ -114,6 +114,7 @@ async function processExplanationRequest(tabId, selectedText, sentence, apiKey, 
     chrome.tabs.sendMessage(tabId, {
       action: 'showExplanation',
       explanation: explanation,
+      model: client.model
     });
 
   } catch (error) {
