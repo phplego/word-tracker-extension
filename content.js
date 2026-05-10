@@ -7,6 +7,9 @@ document.body.appendChild(explanationTooltip);
 
 // Variables to store the current selection information
 let currentSelectionPosition = null;
+let isDraggingTooltip = false;
+let tooltipDragOffsetX = 0;
+let tooltipDragOffsetY = 0;
 
 let options = {
     isEnabled: false,
@@ -115,6 +118,13 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
             // Create header element
             const headerElement = document.createElement('div');
             headerElement.className = 'tooltip-header';
+            headerElement.onmousedown = (event) => {
+                if (event.button !== 0 || event.target.closest('.close-button')) return;
+                event.preventDefault();
+                isDraggingTooltip = true;
+                tooltipDragOffsetX = event.pageX - parseFloat(explanationTooltip.style.left || 0);
+                tooltipDragOffsetY = event.pageY - parseFloat(explanationTooltip.style.top || 0);
+            };
             explanationTooltip.appendChild(headerElement);
 
             // Add icon to the header
@@ -162,6 +172,16 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         }
         return false; // No async response needed
     }
+});
+
+document.addEventListener('mousemove', (event) => {
+    if (!isDraggingTooltip) return;
+    explanationTooltip.style.left = `${event.pageX - tooltipDragOffsetX}px`;
+    explanationTooltip.style.top = `${event.pageY - tooltipDragOffsetY}px`;
+});
+
+document.addEventListener('mouseup', () => {
+    isDraggingTooltip = false;
 });
 
 // Close the explanation tooltip when clicking outside of it
