@@ -141,17 +141,31 @@ document.addEventListener('DOMContentLoaded', async function() {
     // Clear existing options
     modelSelector.innerHTML = '';
 
-    // Sort and process models
-    const sortedModels = [...models];
+    // Sort and process text-only models
+    const sortedModels = models.filter(model => {
+      const inputModalities = model.architecture?.input_modalities || [];
+      const outputModalities = model.architecture?.output_modalities || [];
+
+      return inputModalities.length === 1
+        && inputModalities[0] === 'text'
+        && outputModalities.length === 1
+        && outputModalities[0] === 'text';
+    });
 
     const recommendedModels = [
+      'gpt-oss-120b',
+      'deepseek-chat',
       'qwen3-235b-a22b-2507',
-      'deepseek-chat-v3-0324',
-      'kimi-k2'
     ]
     
-    // Sort models: recommended models first, then by creation date (newest first)
+    // Sort models: free first, then recommended, then by creation date (newest first)
     sortedModels.sort((a, b) => {
+      const aIsFree = a.id.endsWith(':free');
+      const bIsFree = b.id.endsWith(':free');
+
+      if (aIsFree && !bIsFree) return -1;
+      if (!aIsFree && bIsFree) return 1;
+
       // Check if model IDs are in the recommendedModels array
       const aIsRecommended = recommendedModels.some(id => a.id.includes(id));
       const bIsRecommended = recommendedModels.some(id => b.id.includes(id));
