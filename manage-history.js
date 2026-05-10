@@ -61,12 +61,37 @@ document.addEventListener('DOMContentLoaded', async function() {
       alert('Failed to export history to JSON. See console for details.');
     }
   });
+
+  document.getElementById('import-history').addEventListener('click', function() {
+    document.getElementById('import-history-file').click();
+  });
+
+  document.getElementById('import-history-file').addEventListener('change', async function(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    try {
+      const entries = JSON.parse(await file.text());
+      for (const entry of entries) {
+        await wordHistoryService.addEntry(entry.word, entry.explanation, entry.sentence || '', entry.timestamp);
+      }
+      await loadHistoryEntries();
+    } catch (error) {
+      console.error('Failed to import history from JSON:', error);
+      alert('Failed to import history from JSON. See console for details.');
+    }
+
+    event.target.value = '';
+  });
 });
 
 // Function to load and display all history entries
 async function loadHistoryEntries() {
   try {
-    document.getElementById('loading-history').style.display = 'block';
+    const loadingHistory = document.getElementById('loading-history');
+    if (loadingHistory) {
+      loadingHistory.style.display = 'block';
+    }
 
     // Get all entries (using a large limit to ensure we get everything)
     const entries = await wordHistoryService.getEntries(10000, true);
@@ -79,7 +104,9 @@ async function loadHistoryEntries() {
     }
 
     // Clear loading message
-    document.getElementById('loading-history').style.display = 'none';
+    if (loadingHistory) {
+      loadingHistory.style.display = 'none';
+    }
 
     // Create a container for the entries
     const entriesContainer = document.createElement('div');
@@ -127,7 +154,6 @@ function createHistoryEntryElement(entry) {
     <div class="history-entry-header clickable">
       <div class="toggle-indicator">▼</div>
       <div class="history-word">${explanationFirstLine}</div>
-      <div style="flex:1"></div>
       <div class="history-timestamp">${formattedDate}</div>
     </div>
     <div class="entry-content">

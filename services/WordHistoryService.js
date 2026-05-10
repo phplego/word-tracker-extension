@@ -31,12 +31,12 @@ class WordHistoryService {
     });
   }
 
-  async addEntry(word, explanation, sentence = '') {
+  async addEntry(word, explanation, sentence = '', timestamp = Date.now()) {
     const entry = {
       word,
       explanation,
       sentence,
-      timestamp: Date.now()
+      timestamp
     };
     return this._transaction('readwrite', (store) => store.add(entry));
   }

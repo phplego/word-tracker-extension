@@ -19,6 +19,10 @@
     "message": "экспорт",
     "description": "Export link text"
   },
+  "importLink": {
+    "message": "импорт",
+    "description": "Import link text"
+  },
   "manageHistoryButton": {
     "message": "Управление историей",
     "description": "Manage history button text"

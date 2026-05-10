@@ -19,6 +19,10 @@
     "message": "ส่งออก",
     "description": "Export link text"
   },
+  "importLink": {
+    "message": "นำเข้า",
+    "description": "Import link text"
+  },
   "manageHistoryButton": {
     "message": "จัดการประวัติ",
     "description": "Manage history button text"
