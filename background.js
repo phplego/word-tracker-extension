@@ -92,7 +92,9 @@ async function processExplanationRequest(tabId, selectedText, sentence, apiKey, 
     const client = new OpenRouterClient(apiKey, model);
 
     // Get the completion
+    const startedAt = performance.now();
     const response = await client.completion(prompt);
+    const duration = (performance.now() - startedAt) / 1000;
 
     // Extract the explanation from the response
     let explanation = response.choices && response.choices[0] && response.choices[0].message
@@ -114,7 +116,8 @@ async function processExplanationRequest(tabId, selectedText, sentence, apiKey, 
     chrome.tabs.sendMessage(tabId, {
       action: 'showExplanation',
       explanation: explanation,
-      model: client.model
+      model: client.model,
+      duration: duration
     });
 
   } catch (error) {

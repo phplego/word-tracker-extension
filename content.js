@@ -161,7 +161,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
             if (message.model) {
                 const modelElement = document.createElement('div');
                 modelElement.className = 'tooltip-model';
-                modelElement.textContent = `model: ${message.model}`;
+                modelElement.textContent = `model: ${message.model} · ${message.duration.toFixed(1)} s`;
                 contentContainer.appendChild(modelElement);
             }
 
